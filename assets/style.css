@@ -348,6 +348,19 @@ section{padding-block:clamp(64px,8.5vw,var(--s10))}
   color:var(--muted);margin-top:var(--s7);
 }
 
+/* --------------------------------------------------------------- menu -- */
+.menu-hero{padding-block:clamp(48px,7vw,88px) clamp(32px,5vw,56px)}
+.menu-pages-section{padding-block:0 clamp(64px,8vw,var(--s10))}
+.menu-hint{color:var(--muted);font-size:15px;margin-bottom:var(--s5)}
+.menu-pages{display:grid;gap:var(--s5)}
+.menu-pages a{
+  display:block;border-radius:var(--r-lg);overflow:hidden;
+  border:1px solid var(--line);background:var(--white);
+  transition:transform var(--dur) var(--ease),box-shadow var(--dur) var(--ease),border-color var(--dur) var(--ease);
+}
+.menu-pages a:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:var(--black)}
+.menu-pages img{width:100%;height:auto}
+
 /* ------------------------------------------------------------ reviews -- */
 .ratings{display:grid;gap:var(--s5);grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin-bottom:var(--s7)}
 .rating-card{
