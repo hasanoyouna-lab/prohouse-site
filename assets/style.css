@@ -219,6 +219,8 @@ h2.sec-title{
   width:100%;border-radius:var(--r-lg);box-shadow:var(--shadow-md);
   aspect-ratio:4/5;object-fit:cover;
 }
+/* Landscape-ish source: keep its own ratio so cover doesn't crop the plate. */
+.hero-media.wide img{aspect-ratio:11/10}
 .hero-badge{
   position:absolute;inset-block-end:-18px;inset-inline-start:-18px;
   background:var(--yellow);color:var(--black);
