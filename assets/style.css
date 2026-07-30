@@ -405,6 +405,15 @@ section{padding-block:clamp(64px,8.5vw,var(--s10))}
   .hero-badge{position:static;margin-top:var(--s4);max-width:none}
   .hero-blob{inset-block-start:-8%;width:80vw}
   .facts{margin-top:var(--s7)}
+
+  /* Fingers are not cursors: give every tappable link a ~44px target. */
+  .site-footer ul a,
+  .contact-card a,
+  .lang-link{
+    display:inline-flex;align-items:center;min-height:44px;
+  }
+  .site-footer ul{gap:var(--s1)}
+  .social{min-height:44px}
 }
 @media print{
   .site-header,.hero-cta,.apps,.nav-toggle{display:none}
