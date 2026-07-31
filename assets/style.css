@@ -375,6 +375,37 @@ section{padding-block:clamp(64px,8.5vw,var(--s10))}
 .rating-card .count{color:var(--muted);font-size:15px;margin-top:var(--s1)}
 
 .reviews{display:grid;gap:var(--s5);grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+
+/* Continuously scrolling review ticker. The track holds the cards twice;
+   translating it exactly -50% lands on the duplicate, so the loop is seamless. */
+.marquee{
+  position:relative;overflow:hidden;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 5%,#000 95%,transparent 100%);
+          mask-image:linear-gradient(90deg,transparent 0,#000 5%,#000 95%,transparent 100%);
+}
+.marquee-track{
+  display:flex;gap:var(--s5);width:max-content;
+  animation:marquee-scroll 68s linear infinite;
+}
+.marquee:hover .marquee-track,
+.marquee:focus-within .marquee-track{animation-play-state:paused}
+.marquee .review{flex:0 0 330px;width:330px}
+@keyframes marquee-scroll{
+  from{transform:translateX(0)}
+  to{transform:translateX(-50%)}
+}
+.marquee-hint{color:var(--muted);font-size:14px;margin-top:var(--s4)}
+
+/* No motion: drop the animation, hide the duplicate set, let the row scroll by hand. */
+@media (prefers-reduced-motion:reduce){
+  .marquee{overflow-x:auto;-webkit-mask-image:none;mask-image:none}
+  .marquee-track{animation:none}
+  .marquee-track [aria-hidden="true"]{display:none}
+}
+@media (max-width:640px){
+  .marquee .review{flex-basis:280px;width:280px}
+  .marquee-track{animation-duration:52s}
+}
 .review{
   background:var(--white);border:1px solid var(--line);border-radius:var(--r-lg);
   padding:var(--s6);display:flex;flex-direction:column;gap:var(--s4);
