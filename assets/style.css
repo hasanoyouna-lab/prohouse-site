@@ -235,9 +235,12 @@ h2.sec-title{
   border-block:1px solid var(--line);margin-top:var(--s9);
   grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
 }
-.facts div{background:var(--white);padding:var(--s5) var(--s4);text-align:center}
+.facts div{
+  background:var(--white);padding:var(--s5) var(--s4);text-align:center;
+  display:flex;flex-direction:column;justify-content:center;
+}
 .facts dt{font-size:13.5px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
-.facts dd{font-size:19px;font-weight:700;margin-top:var(--s1)}
+.facts dd{font-size:19px;font-weight:700;margin-top:var(--s1);line-height:1.45}
 
 /* ----------------------------------------------------------- sections -- */
 section{padding-block:clamp(64px,8.5vw,var(--s10))}
