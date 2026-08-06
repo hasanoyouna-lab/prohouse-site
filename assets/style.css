@@ -139,9 +139,9 @@ h2.sec-title{
   transition:border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
 }
 .site-header.is-stuck{border-bottom-color:var(--line);box-shadow:var(--shadow-sm)}
-.nav-bar{display:flex;align-items:center;gap:var(--s5);min-height:74px}
+.nav-bar{display:flex;align-items:center;gap:var(--s5);min-height:88px}
 .brand{display:flex;align-items:center;flex-shrink:0}
-.brand img{height:40px;width:auto}
+.brand img{height:56px;width:auto}
 .nav-links{display:flex;align-items:center;gap:var(--s5);margin-inline-start:auto}
 .nav-links a{
   position:relative;text-decoration:none;font-size:15.5px;font-weight:500;
@@ -483,8 +483,11 @@ section{padding-block:clamp(64px,8.5vw,var(--s10))}
 @media (max-width:860px){
   body{font-size:16px}
   .nav-toggle{display:block}
+  .brand img{height:46px}
+  .nav-bar{min-height:76px}
+  .nav-links{inset-block-start:76px}
   .nav-links{
-    position:fixed;inset:74px 0 auto 0;flex-direction:column;align-items:stretch;
+    position:fixed;inset:88px 0 auto 0;flex-direction:column;align-items:stretch;
     gap:0;background:var(--white);border-bottom:1px solid var(--line);
     padding:var(--s4) var(--s5) var(--s6);margin:0;
     box-shadow:var(--shadow-md);
